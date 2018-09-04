@@ -1,0 +1,10 @@
+<div class="card-deck">
+  <ng-container *ngFor="let person of people">
+      <div class="card">
+          <person-image [id]="person.Id"></person-image>
+          <div class="card-body">
+              <person-info [person]="person"></person-info>
+          </div>
+      </div>
+  </ng-container>
+</div>    

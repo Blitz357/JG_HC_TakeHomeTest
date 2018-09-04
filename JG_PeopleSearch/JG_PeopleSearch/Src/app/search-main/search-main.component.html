@@ -1,0 +1,13 @@
+<div>
+    <div class="row">
+        <div class="input-group search-input">
+            <input #searchInput type="text" class="form-control" (keyup.enter)="getPeople(searchInput.value)" placeholder="Enter your name search criteria" style=width:50%;>
+            <span class="input-group-btn">
+                <button class="btn btn-default" (click)="getPeople(searchInput.value)">Search</button> 
+            </span>
+        </div>
+    </div>
+    <div class="row">
+        <people-list [people]="people"></people-list>
+    </div>
+</div>

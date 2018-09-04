@@ -1,0 +1,17 @@
+
+<h5 class="card-title">{{getFullName()}}</h5>
+<hr/>
+<div>
+    <p class="card-text">Age: <small class="text-muted">{{getAge()}}</small></p>
+    <p class="card-text">
+        Interests:<br />
+        <span class="text-muted interest">
+            <small>{{getInterest()}}</small>
+        </span>
+    </p>
+
+    <p class="card-text">
+        Address: <br />
+        <person-address [address]="person.PersonAddress"></person-address>
+    </p>
+</div>
