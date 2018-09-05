@@ -8,7 +8,6 @@ namespace JG_PeopleSearch.Persistence
     {
         public PeopleSearchContext() : base("name=PeopleSearchContext")
         {
-            Database.SetInitializer(new CreateDbAndSeedDbInitializer());
         }
 
         public virtual DbSet<Person> People { get; set; }
