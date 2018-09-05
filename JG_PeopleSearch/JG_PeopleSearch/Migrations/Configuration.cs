@@ -8,7 +8,8 @@ namespace JG_PeopleSearch.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(Persistence.PeopleSearchContext context)
