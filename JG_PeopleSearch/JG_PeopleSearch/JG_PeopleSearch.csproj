@@ -214,6 +214,7 @@
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\PersonAddress.cs" />
     <Compile Include="Models\PersonImage.cs" />
+    <Compile Include="Persistence\CreateDbAndSeedDbInitializer.cs" />
     <Compile Include="Persistence\IPersonImageRepository.cs" />
     <Compile Include="Persistence\IPersonRepository.cs" />
     <Compile Include="Persistence\IRepository.cs" />

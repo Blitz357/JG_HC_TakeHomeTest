@@ -1,5 +1,3 @@
-using JG_PeopleSearch.Seed;
-
 namespace JG_PeopleSearch.Migrations
 {
     using System.Data.Entity.Migrations;
@@ -9,12 +7,11 @@ namespace JG_PeopleSearch.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(Persistence.PeopleSearchContext context)
         {
-            context.People.AddOrUpdate(p => p.Id, new SeedData().GetAllSeedPeople());
+            //Note: Seeding in CreateDbAndSeedDbInitializer.
         }
     }
 }

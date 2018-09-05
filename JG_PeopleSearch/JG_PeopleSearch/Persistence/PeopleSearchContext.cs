@@ -1,5 +1,3 @@
-using System.Data.Entity.ModelConfiguration.Conventions;
-using JG_PeopleSearch.Migrations;
 using JG_PeopleSearch.Models;
 
 namespace JG_PeopleSearch.Persistence
@@ -10,6 +8,7 @@ namespace JG_PeopleSearch.Persistence
     {
         public PeopleSearchContext() : base("name=PeopleSearchContext")
         {
+            Database.SetInitializer(new CreateDbAndSeedDbInitializer());
         }
 
         public virtual DbSet<Person> People { get; set; }
@@ -18,10 +17,7 @@ namespace JG_PeopleSearch.Persistence
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<PeopleSearchContext, Configuration>());
-
-            //Define one to (zero or one) relationships
+             //Define one to (zero or one) relationships
             modelBuilder.Entity<Person>()
                 .HasOptional(p => p.PersonImage)
                 .WithRequired(pi => pi.Person);
