@@ -61436,12 +61436,13 @@ var SubjectSubscription = /*@__PURE__*/ (function (_super) {
 /*!********************************************************!*\
   !*** ./node_modules/rxjs/_esm5/internal/Subscriber.js ***!
   \********************************************************/
-/*! exports provided: Subscriber */
+/*! exports provided: Subscriber, SafeSubscriber */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Subscriber", function() { return Subscriber; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SafeSubscriber", function() { return SafeSubscriber; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _util_isFunction__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./util/isFunction */ "./node_modules/rxjs/_esm5/internal/util/isFunction.js");
 /* harmony import */ var _Observer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Observer */ "./node_modules/rxjs/_esm5/internal/Observer.js");
@@ -61697,8 +61698,9 @@ var SafeSubscriber = /*@__PURE__*/ (function (_super) {
     };
     return SafeSubscriber;
 }(Subscriber));
+
 function isTrustedSubscriber(obj) {
-    return obj instanceof Subscriber || ('syncErrorThrowable' in obj && obj[_internal_symbol_rxSubscriber__WEBPACK_IMPORTED_MODULE_4__["rxSubscriber"]]);
+    return obj instanceof Subscriber || ('_addParentTeardownLogic' in obj && obj[_internal_symbol_rxSubscriber__WEBPACK_IMPORTED_MODULE_4__["rxSubscriber"]]);
 }
 //# sourceMappingURL=Subscriber.js.map
 
