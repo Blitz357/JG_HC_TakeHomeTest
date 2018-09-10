@@ -377,7 +377,7 @@ var PageNotFoundComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "body {\r\n    padding-top: 20px;\r\n}\r\n\r\n.card-deck {\r\n    margin: 0 -15px;\r\n    justify-content: space-between;\r\n}\r\n\r\n.card-deck .card {\r\n    margin: 0 0 1rem;\r\n    min-width: 300px;\r\n}\r\n\r\n@media (min-width: 576px) and (max-width: 767.98px) {\r\n    .card-deck .card {\r\n        flex: 0 0 48.7%;\r\n    }\r\n}\r\n\r\n@media (min-width: 768px) and (max-width: 991.98px) {\r\n    .card-deck .card {\r\n        flex: 0 0 32%;\r\n    }\r\n}\r\n\r\n@media (min-width: 992px) {\r\n    .card-deck .card {\r\n        flex: 0 0 24%;\r\n    }\r\n}\r\n"
+module.exports = "body {\r\n    padding-top: 20px;\r\n}\r\n\r\n.card-deck {\r\n    margin-left: 0px;\r\n    margin-right: 0px;\r\n    justify-content: space-between;\r\n}\r\n\r\n.card-deck .card {\r\n    margin: 0 0 1rem;\r\n    min-width: 300px;\r\n}\r\n\r\n@media (min-width: 576px) and (max-width: 767.98px) {\r\n    .card-deck .card {\r\n        flex: 0 0 48.7%;\r\n    }\r\n}\r\n\r\n@media (min-width: 768px) and (max-width: 991.98px) {\r\n    .card-deck .card {\r\n        flex: 0 0 32%;\r\n    }\r\n}\r\n\r\n@media (min-width: 992px) {\r\n    .card-deck .card {\r\n        flex: 0 0 24%;\r\n    }\r\n}\r\n"
 
 /***/ }),
 
@@ -683,7 +683,7 @@ var PersonInfoComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".search-input{\r\n    margin: 15px 0px 15px -15px;\r\n}\r\n\r\n.people-list{\r\n    margin-top: 20px;\r\n}"
+module.exports = ".search-input{\r\n    margin: 15px 0px 15px 0px;\r\n}\r\n\r\n.people-list{\r\n    margin-top: 20px;\r\n}"
 
 /***/ }),
 
@@ -694,7 +694,7 @@ module.exports = ".search-input{\r\n    margin: 15px 0px 15px -15px;\r\n}\r\n\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n    <div class=\"row\">\r\n        <div class=\"input-group search-input\">\r\n            <input #searchInput type=\"text\" class=\"form-control\" (keyup.enter)=\"getPeople(searchInput.value)\" placeholder=\"Enter your name search criteria\" style=width:50%;>\r\n            <span class=\"input-group-btn\">\r\n                <button class=\"btn btn-default\" (click)=\"getPeople(searchInput.value)\">Search</button> \r\n            </span>\r\n        </div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <people-list [people]=\"people\"></people-list>\r\n    </div>\r\n</div>\r\n"
+module.exports = "<div>\r\n    <div class=\"input-group search-input\">\r\n        <input #searchInput type=\"text\" class=\"form-control\" (keyup.enter)=\"getPeople(searchInput.value)\" placeholder=\"Enter the name you would like to search or leave blank to show all:\">\r\n        <span class=\"input-group-btn\">\r\n            <button class=\"btn btn-default\" (click)=\"getPeople(searchInput.value)\">Search</button> \r\n        </span>\r\n    </div>\r\n    <people-list [people]=\"people\"></people-list>\r\n</div>\r\n"
 
 /***/ }),
 

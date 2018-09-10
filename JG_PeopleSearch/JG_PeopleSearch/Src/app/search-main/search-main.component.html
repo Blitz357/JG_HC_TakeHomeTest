@@ -1,13 +1,9 @@
 <div>
-    <div class="row">
-        <div class="input-group search-input">
-            <input #searchInput type="text" class="form-control" (keyup.enter)="getPeople(searchInput.value)" placeholder="Enter your name search criteria" style=width:50%;>
-            <span class="input-group-btn">
-                <button class="btn btn-default" (click)="getPeople(searchInput.value)">Search</button> 
-            </span>
-        </div>
+    <div class="input-group search-input">
+        <input #searchInput type="text" class="form-control" (keyup.enter)="getPeople(searchInput.value)" placeholder="Enter the name you would like to search or leave blank to show all:">
+        <span class="input-group-btn">
+            <button class="btn btn-default" (click)="getPeople(searchInput.value)">Search</button> 
+        </span>
     </div>
-    <div class="row">
-        <people-list [people]="people"></people-list>
-    </div>
+    <people-list [people]="people"></people-list>
 </div>
