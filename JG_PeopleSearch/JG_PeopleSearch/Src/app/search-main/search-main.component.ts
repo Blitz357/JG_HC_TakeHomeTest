@@ -9,13 +9,13 @@ import { PeopleService } from '../services/people.service';
 })
 export class SearchMainComponent {
 
-  constructor(private peopleServcie: PeopleService) { 
+  constructor(private peopleService: PeopleService) { 
   }
 
   public people : Person[];
 
   getPeople(searchCriteria: string) : void{
-      this.peopleServcie.getPeople(searchCriteria).subscribe(
+      this.peopleService.getPeople(searchCriteria).subscribe(
         (listOfPerson)=> {
           this.people = listOfPerson;
         }

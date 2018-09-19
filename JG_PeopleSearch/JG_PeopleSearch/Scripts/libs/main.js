@@ -41,7 +41,7 @@ module.exports = ".about {\r\n    padding-top: 15px;\r\n    margin-top: 60px;\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"jumbotron about\">\n  <h1>About</h1>\n  <hr>\n  <h6>The People Search Test App was written by Jason Gregory for a job interview evaluation.</h6>\n  \n   <h6 class=\"inner-heading\">Requirement:</h6>\n   <p class=\"text-muted\">\n     The application accepts search input in a text box and then displays in a pleasing style a list of people where any part of their first or last name matches what was typed in the search box (displaying at least name, address, age, interests, and a picture).\n  </p>\n\n  <h6 class=\"inner-heading\">Summary of Technology:</h6>\n  <!-- <p class=\"text-muted\"> -->\n      <ul class=\"list-style text-muted\">\n          <li>ASP.NET Web API</li>\n          <li>Entity Framework</li>\n          <li>C#</li>\n          <li>NUnit</li>\n          <li>Moq</li>\n          <li>Angular 6</li>\n          <li>Angular CLI</li>\n          <li>Bootstrap 4</li>\n          <li>Typescript</li>\n          <li>Jasmine</li>\n          <li>Karma</li>\n          <li>Etc...</li>\n      </ul>\n</div>   "
+module.exports = "\n<div class=\"jumbotron about\">\n  <h1>About</h1>\n  <hr>\n  <h6>The People Search Test App was written by Jason Gregory for a job interview evaluation.</h6>\n  \n   <h6 class=\"inner-heading\">Requirement:</h6>\n   <p class=\"text-muted\">\n     The application accepts search input in a text box and then displays in a pleasing style a list of people where any part of their first or last name matches what was typed in the search box (displaying at least name, address, age, interests, and a picture).\n  </p>\n\n  <h6 class=\"inner-heading\">Summary of Technology:</h6>\n      <ul class=\"list-style text-muted\">\n          <li>ASP.NET Web API</li>\n          <li>Entity Framework</li>\n          <li>C#</li>\n          <li>NUnit</li>\n          <li>Moq</li>\n          <li>Angular 6</li>\n          <li>Angular CLI</li>\n          <li>Bootstrap 4</li>\n          <li>Typescript</li>\n          <li>Jasmine</li>\n          <li>Karma</li>\n          <li>Etc...</li>\n      </ul>\n</div>   "
 
 /***/ }),
 
@@ -270,7 +270,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar fixed-top navbar-expand-lg navbar-dark bg-dark\">\r\n        <a class=\"navbar-brand\" href=\"/\"><b>People Search Test App</b> <span class=\"glyphicon glyphicon-search\"></span></a>\r\n        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n          <span class=\"navbar-toggler-icon\"></span>\r\n        </button>\r\n        <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n          <ul class=\"navbar-nav\">\r\n            <li class=\"nav-item\">\r\n              <a class=\"nav-link\" href=\"/search\">Home <span class=\"sr-only\">(current)</span></a>\r\n            </li>\r\n            <li class=\"nav-item\">\r\n              <a class=\"nav-link\" href=\"/about\">About</a>\r\n            </li>\r\n          </ul>\r\n        </div>\r\n</nav>  \r\n"
+module.exports = "<nav class=\"navbar fixed-top navbar-expand-lg navbar-dark bg-dark\">\r\n    <a class=\"navbar-brand\" href=\"/\"><b>People Search Test App</b> <span class=\"glyphicon glyphicon-search\"></span></a>\r\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n    </button>\r\n    <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n        <ul class=\"navbar-nav\">\r\n        <li class=\"nav-item\">\r\n            <a class=\"nav-link\" href=\"/search\">Home <span class=\"sr-only\">(current)</span></a>\r\n        </li>\r\n        <li class=\"nav-item\">\r\n            <a class=\"nav-link\" href=\"/about\">About</a>\r\n        </li>\r\n        </ul>\r\n    </div>\r\n</nav>  \r\n"
 
 /***/ }),
 
@@ -646,8 +646,8 @@ var PersonInfoComponent = /** @class */ (function () {
         var today = new Date();
         var dateOfBirth = new Date(this.person.DateOfBirth);
         var age = today.getFullYear() - dateOfBirth.getFullYear();
-        var m = today.getMonth() - dateOfBirth.getMonth();
-        if (m < 0 || (m === 0 && today.getDate() < dateOfBirth.getDate())) {
+        var month = today.getMonth() - dateOfBirth.getMonth();
+        if (month < 0 || (month === 0 && today.getDate() < dateOfBirth.getDate())) {
             age--;
         }
         return age;
@@ -722,12 +722,12 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var SearchMainComponent = /** @class */ (function () {
-    function SearchMainComponent(peopleServcie) {
-        this.peopleServcie = peopleServcie;
+    function SearchMainComponent(peopleService) {
+        this.peopleService = peopleService;
     }
     SearchMainComponent.prototype.getPeople = function (searchCriteria) {
         var _this = this;
-        this.peopleServcie.getPeople(searchCriteria).subscribe(function (listOfPerson) {
+        this.peopleService.getPeople(searchCriteria).subscribe(function (listOfPerson) {
             _this.people = listOfPerson;
         });
     };
@@ -778,7 +778,7 @@ var PeopleService = /** @class */ (function () {
         if (searchCriteria) {
             httpParams = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpParams"]().set('filterBy', searchCriteria);
         }
-        return this.http.get("/api/people", { params: httpParams });
+        return this.http.get('/api/people', { params: httpParams });
     };
     PeopleService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({

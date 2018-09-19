@@ -15,7 +15,7 @@ import { AboutComponent } from './about/about.component';
 import { APP_BASE_HREF } from '@angular/common';
 import { PersonInfoComponent } from './person-info/person-info.component';
 import { PersonAddressComponent } from './person-address/person-address.component';
-import { PersonImageComponent } from "./person-image/person-image.component";
+import { PersonImageComponent } from './person-image/person-image.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PeopleListComponent } from './people-list/people-list.component';
 var appRoutes = [

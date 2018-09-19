@@ -30,9 +30,9 @@ export class PersonInfoComponent {
 
         let today = new Date();
         let dateOfBirth = new Date(this.person.DateOfBirth);
-        var age = today.getFullYear() - dateOfBirth.getFullYear();
-        var m = today.getMonth() - dateOfBirth.getMonth();
-        if (m < 0 || (m === 0 && today.getDate() < dateOfBirth.getDate())) {
+        let age = today.getFullYear() - dateOfBirth.getFullYear();
+        let month = today.getMonth() - dateOfBirth.getMonth();
+        if (month < 0 || (month === 0 && today.getDate() < dateOfBirth.getDate())) {
             age--;
         }
         return age;  

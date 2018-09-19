@@ -18,7 +18,7 @@ export class PeopleService {
       httpParams = new HttpParams().set('filterBy', searchCriteria);
     }
 
-    return this.http.get<Person[]>("/api/people", { params: httpParams});
+    return this.http.get<Person[]>('/api/people', { params: httpParams});
   }
 }
   
